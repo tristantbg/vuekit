@@ -26,6 +26,12 @@ export default new Router({
       component: () => import('./views/Projects.vue')
     },
     {
+      path: '/projects/:id',
+      name: 'project',
+      component: () => import('./views/Project.vue'),
+      props: true
+    },
+    {
       path: '*',
       redirect: '/'
     }

@@ -1,8 +1,8 @@
 <template>
   <main class="projects">
-    <li ref="project" v-for="project in projects.children" :key="project.uid">
+    <router-link :to="{ name: 'project', params: { id: project.uid } }" ref="project" v-for="project in projects.children" :key="project.uid">
       <img v-lazy="featured(project).url" :data-srcset="featured(project).srcSet" />
-    </li>
+    </router-link>
   </main>
 </template>
 
@@ -10,7 +10,6 @@
 export default {
   computed: {
     projects() {
-      console.log(this.$store.getters.getPageByUID('projects'))
       return this.$store.getters.getPageByUID('projects')
     }
   },
