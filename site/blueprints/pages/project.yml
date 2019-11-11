@@ -18,6 +18,9 @@ columns:
       info:
         type: fields
         fields:
+          featured:
+            type: files
+            multiple: false
           year:
             label: Year
             type: number

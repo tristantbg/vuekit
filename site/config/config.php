@@ -25,8 +25,10 @@ return [
             $files = [];
             foreach ($page->files()->sortBy('sort', 'asc') as $file) {
               $filedata = array(
+                'id' => $file->id(),
                 'url' => $file->url(),
                 'thumb' => $file->thumb(['width' => 10, 'quality' => 80, 'blur' => 5])->url(),
+                'srcSet' => $file->srcset([300, 800, 1024]),
                 'page' => $file->parent()->uid(),
                 'index' => $file->indexOf(),
                 'filename' => $file->name(),

@@ -1,8 +1,7 @@
 <template>
   <main class="projects">
     <li ref="project" v-for="project in projects.children" :key="project.uid">
-      <h1>{{ project.title }}</h1>
-      <img :src="project.files[0].url"/>
+      <img v-lazy="featured(project).url" :data-srcset="featured(project).srcSet" />
     </li>
   </main>
 </template>
@@ -11,11 +10,20 @@
 export default {
   computed: {
     projects() {
+      console.log(this.$store.getters.getPageByUID('projects'))
       return this.$store.getters.getPageByUID('projects')
+    }
+  },
+  methods: {
+    featured(project) {
+      return project.files.filter(img => img.id === project.content.featured[0].id)[0]
     }
   }
 }
 </script>
 
 <style lang="scss">
+.projects {
+  background: red;
+}
 </style>

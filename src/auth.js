@@ -1,5 +1,5 @@
 const auth = {
-  u: 'api@vuekit.com',
+  u: 'api@api.api',
   p: 'loadContent'
 }
 

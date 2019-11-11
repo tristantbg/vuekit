@@ -1,1 +1,8 @@
-<?php include("dist/index.html"); ?>
+<?php
+
+  $html = '';
+  $html .= Html::tag('h1', $page->title());
+
+?>
+
+<?php snippet('app', ['html' => $html]) ?>

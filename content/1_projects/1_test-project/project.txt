@@ -2,6 +2,12 @@ Title: Test Project
 
 ----
 
+Featured:
+
+- 1466.jpg
+
+----
+
 Year: 2019
 
 ----
